@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 import com.tool.classmonitor.PendingHookHandler;
@@ -21,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        ArrayList<String> arrayList = new ArrayList<>();
-//        arrayList.add("libtracetest.so");
-//        JniTrace.startJnitrace(arrayList, null);
-        JniTrace.startJnitrace(this.getApplicationInfo(), null);
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("libtracetest.so");
+        JniTrace.startJnitrace(arrayList, null);
+//        JniTrace.startJnitrace(this.getApplicationInfo(), null);
 
         Log.i(TAG, "onCreate: " + Build.SERIAL);
         Log.i(TAG, "onCreate: PendingHookHandler.canWork() = " + PendingHookHandler.canWork());
