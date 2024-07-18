@@ -371,7 +371,6 @@ namespace ZhenxiRunTime::JniTrace {
         IS_MATCH
                 GET_JOBJECT_INFO(env, obj, "CallStaticIntMethodV")
                 GET_METHOD_INFO_ARGS(env, obj, jmethodId, args, true)
-                GET_METHOD_INFO_ARGS(env, obj, jmethodId, args, true)
                 jint ret = orig_CallStaticIntMethodV(env, obj, jmethodId, args);
                 //LOG(INFO) << "result Int : " << ret;
                 //os << "result Int :  " << ret << "\n";;
